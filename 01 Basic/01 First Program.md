@@ -55,6 +55,8 @@ As the compiler suggests, the `stdio.h` library is not included before `printf` 
 `printf` function is is stored in the `stdio.h` library. You <u>must</u> include `<` and `>` at the beginning and ending of `stdio.h`.
 
 
+For every operations and function calls, you need semicolon `;` after that statement to denote the end of that statement.
+
 **<u>Common mistake:</u>** The library name is `stdio.h` ***NOT*** `studio.h`
 
 That should be it for your first program!
