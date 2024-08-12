@@ -88,4 +88,6 @@ int main() {
 
 Don't worry if you couldn't come up with this yourself. For beginners, it takes a lot of trials and errors with some Googling before getting a promising solution.
 
+Next we will take a look at all important printing formats. 
+
 </details>
