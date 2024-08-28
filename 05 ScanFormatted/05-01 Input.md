@@ -29,7 +29,7 @@ The output should be
 Value: 5
 ```
 
-Before you ask, ***no***, that ampersand (`&`) in `scanf` is there intentionally and it has meaning. Don't miss it, or else your program will crash! You will learn about this in detailed in Advanced Computer Programming course.
+Before you ask, ***no***, that ampersand (`&`) in `scanf` is there intentionally and it has a meaning. Don't miss it, or else your program will crash! You will learn about this in detailed in Advanced Computer Programming course.
 
 You can also input many values in single scanf
 
