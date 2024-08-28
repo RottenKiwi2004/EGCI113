@@ -14,6 +14,11 @@ int main() {
 
 Print the date in the format of dd/mm/yyyy
 
+### Sample Output
+```
+18/09/2024
+```
+
 *As you might have noticed, you can immediately assign values to the variables or you can just declare the variables and assign them later.*
 
 ## Please try writing the codes yourself first, before seeing the hints and solutions.
