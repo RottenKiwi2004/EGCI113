@@ -15,7 +15,7 @@ Extra Challenge: Only one printf call is allowed
 
 This practice should not take longer than 5 minutes for an absolute beginner and 2 minutes for people with some experience. If it takes longer than that, just look at the hints and solutions. 
 
-### Hint
+### Hint 1
 
 <details>
 
