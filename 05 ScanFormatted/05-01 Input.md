@@ -13,7 +13,7 @@ Similar to printf, we need to specify the type of data that we are scanning. The
 int main() {
     int a;
     scanf("%d", &a);
-    printf("Value: %d", a);
+    printf("Value: %d\n", a);
 }
 ```
 
@@ -38,7 +38,7 @@ You can also input many values in single `scanf`
 int main() {
     int a, b, c;
     scanf("%d%d%d", &a, &b, &c);
-    printf("Value: %d, %d, %d", a, b, c);
+    printf("Value: %d, %d, %d\n", a, b, c);
 }
 ```
 
