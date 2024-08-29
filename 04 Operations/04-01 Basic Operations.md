@@ -10,6 +10,14 @@ Just these four operations and you are ready to calculate the projectile traject
 
 *(Assuming that you know enough Physics)*
 
+Wait, there is another operator! `%`
+
+This is called 'modulus operator' or 'mod' in short.
+
+Basically, it finds the remainder of division
+
+For example, `7 % 3` would result in `1` because dividing `7` by `3` gives us the quotient of `2` and remainder of `1`
+
 ### But it's not that straightforward!
 
 Let's say we want to divide `a` by `b`
