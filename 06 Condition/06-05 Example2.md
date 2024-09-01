@@ -1,74 +1,24 @@
 # Example
 
-### Leap year
+### Grading rubric
 
-Another classic problem when you start programming is determining if the year is a leap year or not.
+Same as [before](./06-01%20If-Else.md), but use switch-case 
 
 #### Input
 
-A single integer $n$ when $0 \leq n \leq 10000$
+A single integer, $n$.
 
 #### Output
 
-`Yes` if $n$ is a leap year, `No` otherwise.
-
-#### Sample Input 1
-
-```
-2007
-```
-
-#### Sample Output 1
-
-```
-No
-```
-
-#### Sample Input 2
-
-```
-2008
-```
-
-#### Sample Output 2
-
-```
-Yes
-```
-
-#### Sample Input 3
-
-```
-1800
-```
-
-#### Sample Output 3
-
-```
-No
-```
-
-#### Sample Input 4
-
-```
-2000
-```
-
-#### Sample Output 4
-
-```
-Yes
-```
+Grades in letters or `Invalid` if the input is out of range
 
 ### Hint 1
 
 <details>
 
-<summary>Condition of a leap year</summary>
+<summary>You don't need to write 100 cases</summary>
 
-- If the year is divisible by $4$, it is a leap year
-- Unless the year is divisible by $100$, then it is **not** a leap year
-- Unless the year is divisible by $400$, then it is a leap year
+Each grade is 5 points apart from the previous one. Try using math to reduce the number of cases
 
 </details>
 
@@ -78,38 +28,47 @@ Yes
 
 <details>
 
-<summary>If-else branches</summary>
+<summary>How should invalid cases be handled?</summary>
 
-<img src="assets/leap.png">
+There are countable finite number of valid cases, but too many number of invalid cases. Handling valid cases only should be a better option.
+
+Remember the keyword `default`
 
 </details>
 
 <hr/>
 
-### Solution 1
+### Solution
 
 <details>
 
 <summary>Full code</summary>
 
+Take your time to critically think through all the possible cases in this code.
+
 ```c
 #include <stdio.h>
 
 int main() {
-    int n;
-    scanf("%d", &n);
+    int score;
+    scanf("%d", &score);
 
-    if (n % 4 != 0) {
-        printf("No\n");
-    }
-    else if (n % 100 != 0) {
-        printf("Yes\n");
-    }
-    else if (n % 400 != 0) {
-        printf("No\n");
-    }
-    else {
-        printf("Yes\n");
+    printf("Your grade: ");
+    switch (score / 5) {
+        case 0: case 1: case 2: case 3: case 4:
+        case 5: case 6: case 7: case 8: case 9:
+        case 10: case 11:
+            printf("F"); break;
+        case 12: printf("D");   break;
+        case 13: printf("D+");  break;
+        case 14: printf("C");   break;
+        case 15: printf("C+");  break;
+        case 16: printf("B");   break;
+        case 17: printf("B+");  break;
+        case 18: case 19: case 20: 
+            printf("A");   break;
+        default:
+            printf("Invalid");
     }
 }
 ```
@@ -118,30 +77,55 @@ int main() {
 
 <hr/>
 
-### Solution 2
+### There are some flaws in the solution code!
 
 <details>
 
-<summary>Full code (More compact)</summary>
+<summary>Explanation</summary>
 
-Different code, same result
+And I did it on purpose. If you found it before reading through this, great!
+
+So, what's wrong? Try putting in number `101`. You would still get an `A`, when it should be `Invalid`
+
+Why? Because of how integer division works! `101 / 5` is equal to `20` so it enters the `case 20:`
+
+What if we remove `case 20:` from the case of grade `A`?
+
+Then people with full score (pretty rare, but still possible) will get `Invalid` grade.
+
+How to fix this? Simply add another `if` like so:
 
 ```c
 #include <stdio.h>
 
 int main() {
-    int n;
-    scanf("%d", &n);
+    int score;
+    scanf("%d", &score);
 
-    if (n % 4 == 0 && (n % 100 != 0 || n % 400 == 0)) {
-        printf("Yes\n");
-    }
-    else {
-        printf("No\n");
+    printf("Your grade: ");
+    switch (score / 5) {
+        case 0: case 1: case 2: case 3: case 4:
+        case 5: case 6: case 7: case 8: case 9:
+        case 10: case 11:
+            printf("F"); break;
+        case 12: printf("D");   break;
+        case 13: printf("D+");  break;
+        case 14: printf("C");   break;
+        case 15: printf("C+");  break;
+        case 16: printf("B");   break;
+        case 17: printf("B+");  break;
+        case 18: case 19: case 20:
+            if (score <= 100) {
+                printf("A");
+                break;
+            }
+        default:
+            printf("Invalid");
     }
 }
 ```
 
-</details>
+Now when the score is `101`, `if` will not be executed and `break` which is in that if-block will not be reached. Thus it falls through to the default case which will not output `Invalid`. 
 
-<hr/>
+
+</details>
