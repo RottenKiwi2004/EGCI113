@@ -35,6 +35,6 @@ So, how does it work?
 <img src="./assets/for-loop.png">
 
 - `A` Initialisation is executed ***only*** when the for loop first reached
-- `B` Condition is checked right after the initialisation and before after each increment
+- `B` Condition is checked right after the initialisation and after each increment
 - `C` This is the part where we put the code that will be repeated multiple times
 - `D` Increment is executed after each loop
