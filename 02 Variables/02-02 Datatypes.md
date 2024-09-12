@@ -39,6 +39,10 @@ I'm gonna separate out the crucial ones here, so your brain is not bombarded wit
 
 ### For nerds out there:
 
+<details>
+
+<summary>Explanation for <code>*</code></summary>
+
 `*` This depends on the compiler implementation and the CPU architecture
 
 `**` The actual value is in that range, but the characters need to be mapped to ASCII table
@@ -46,3 +50,28 @@ I'm gonna separate out the crucial ones here, so your brain is not bombarded wit
 `***` The reason that `float` and `double` ranges are `N/A` is that the range actually exists, but it is wildly large and imprecise to go to that such value. The reason behind this is related to how floating point was implemented (by using scientific notation).
 
 *You don't need to fully understand these footnotes. It's about how computer actually operates and you can learn more about it in Computer Architecture.*
+
+</details>
+
+<hr/>
+
+### Assigning values to variable of each data types
+
+
+`int`
+```c
+int a = 1;
+```
+
+`float` and `double`
+```c
+float b = 2.3;
+double c = 3.4;
+```
+
+`char`
+```c
+char d = 'd';
+```
+
+**Important!** Use single quote (`'`) for `char` because double quote (`"`) means `string` and it behaves differently.
