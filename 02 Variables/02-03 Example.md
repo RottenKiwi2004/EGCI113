@@ -7,7 +7,7 @@
 int main() {
     int d = 18;
     int m;
-    int y = 2024
+    int y = 2024;
     m = 9;
 }
 ```
