@@ -141,7 +141,7 @@ $$Average = \frac{a+b+c+d}{4}$$
 int main() {
     int a = 2, b = 3, c = 5, d = 7;
     int sum = a + b + c + d;
-    double average = (float) sum / 4
+    double average = (double) sum / 4
     printf("Average: %.2lf\n", average)
 }
 ```
